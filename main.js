@@ -1,7 +1,7 @@
 const addBtn = document.querySelector(".add");
 const clearBtn = document.querySelector(".clear");
 let inputField = document.querySelector(".line");
-const container = document.getElementById(".container");
+const container = document.getElementById("container");
 
 class lines {
     constructor(list){
@@ -32,8 +32,34 @@ class lines {
         lineList.appendChild(editBtn);
         lineList.appendChild(removeBtn);
 
+        editBtn.addEventListener('click',() => this.edit(lists));
+        removeBtn.addEventListener('click',() => this.remove(lineList));
+    }
+    edit(lists){
+        lists.disabled = !lists.disabled;
+    }
+    remove(lines){
+        container.removeChild(lines);
+    }
+    
+}
+
+function provera(lists){
+    if(inputField.value != ""){
+        new lines(inputField.value);
+        inputField.value = "";
     }
 }
 
-new lines("Code");
-
+clearBtn.addEventListener('click',() => {
+    if (clearBtn){
+        inputField.value = ""
+        
+    };
+});
+addBtn.addEventListener('click',provera)
+window.addEventListener('keydown',(e)=>{
+    if(e == 13){
+        check();
+    }
+});
