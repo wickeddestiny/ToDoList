@@ -1,0 +1,69 @@
+* {
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(139, 255, 103);
+    
+}
+
+.naslov {
+    text-align: center;
+    font-size: 30px;
+}
+
+.mustDo {
+    color: crimson;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.toDoLine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    color: crimson;
+}
+
+.line, .clear , .add {
+    padding: 6px;
+    margin: 4px;
+    background-color: rgb(83, 255, 31) ;
+    border-radius: 20px;
+    font-weight: 700;
+
+}
+.clear, .add {
+    width: 30px;
+}
+.line {
+    color: crimson;
+    width: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.doingList {
+    margin: 20px;
+    display: list-item;
+    
+    
+}
+
+.listMade,.remove,.edit {
+    background-color: rgb(83, 255, 31);
+    
+}
+.listMade {
+    padding: 2px;
+    font-weight: 700;
+    color: red;
+}
