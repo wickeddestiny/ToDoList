@@ -3,6 +3,7 @@ const clearBtn = document.querySelector(".clear");
 let inputField = document.querySelector(".line");
 const container = document.getElementById("container");
 
+
 class lines {
     constructor(list){
         this.createDiv(list);
@@ -15,8 +16,32 @@ class lines {
         lists.type = "text";
 
         let lineList = document.createElement('div');
-        lineList.classList.add("doingList")
+        lineList.classList.add("doingList");
 
+        let marka = document.createElement("label");
+        marka.classList.add("marka");
+        marka.innerHTML= "Priority";
+        marka.htmlFor="prior";
+
+        let chose = document.createElement("select");
+        chose.name = "prior";
+
+        let importantPrio = document.createElement("option");
+        importantPrio.value = "Important";
+        importantPrio.innerHTML= "Important";
+        let mediumPrior = document.createElement("option");
+        mediumPrior.value = "Medium";
+        mediumPrior.innerHTML= "Medium";
+        let lowPrior = document.createElement("option");
+        lowPrior.value = "Low";
+        lowPrior.innerHTML= "Low";
+        let fastPrior = document.createElement("option");
+        fastPrior.value = "Fast";
+        fastPrior.innerHTML= "Fast";
+        
+
+
+        
 
         let editBtn = document.createElement("button");
         editBtn.innerHTML = "edit"
@@ -31,6 +56,13 @@ class lines {
         lineList.appendChild(lists);
         lineList.appendChild(editBtn);
         lineList.appendChild(removeBtn);
+        lineList.appendChild(marka);
+        lineList.appendChild(chose);
+        chose.appendChild(importantPrio)
+        chose.appendChild(mediumPrior)
+        chose.appendChild(lowPrior)
+        chose.appendChild(fastPrior)
+
 
         editBtn.addEventListener('click',() => this.edit(lists));
         removeBtn.addEventListener('click',() => this.remove(lineList));
@@ -63,3 +95,4 @@ window.addEventListener('keydown',(e)=>{
         check();
     }
 });
+new lines("gym");
